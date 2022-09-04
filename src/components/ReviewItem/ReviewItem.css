@@ -1,0 +1,52 @@
+.cart-review-container {
+    width: 571px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    padding: 7px;
+    margin: 21px;
+    display: flex;
+}
+
+.cart-review-container img {
+    width: 91px;
+    border-radius: 8px;
+}
+
+.review-detail-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-container {
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.detail-container p {
+    margin: 0;
+    padding: 0;
+}
+
+.detail-container h2 {
+    margin: 0;
+}
+
+span {
+    color: orange;
+}
+
+.delete-container {
+    margin: auto 10px;
+}
+
+.delete-btn {
+    color: red;
+    background-color: rgb(247, 188, 188);
+    border-radius: 50%;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}

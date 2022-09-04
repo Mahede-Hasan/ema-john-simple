@@ -12,13 +12,13 @@
     cursor: pointer;
 }
 
-.header a {
+.nav{
     text-decoration: none;
     color: white;
     margin-left: 30px;
-    font-size: 17px;
+    font-size: 20px;
 }
 
-.header a:hover {
+.nav:hover {
     color: rgb(252, 179, 42);
 }
