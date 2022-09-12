@@ -22,3 +22,12 @@
 .nav:hover {
     color: rgb(252, 179, 42);
 }
+
+.sign-out{
+    margin-left: 15px;
+    padding: 6px 12px;
+    color: white;
+    background-color: orange;
+    cursor: pointer;
+    border-radius: 5px;
+}
