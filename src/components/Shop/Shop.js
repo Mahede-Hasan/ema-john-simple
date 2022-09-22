@@ -12,6 +12,8 @@ const Shop = () => {
     const [products, setProducts] = useProduct()
     const [cart, setCart] = useCart(products)
     const [pageCount, setPageCount] = useState(0);
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(10);
 
     useEffect(() => {
         fetch('http://localhost:5000/productCount')
@@ -43,33 +45,42 @@ const Shop = () => {
     return (
         <div>
             <div className='shop-container'>
-            <div className="product-container">
-                {
-                    products.map(product => <Product
-                        key={product._id}
-                        product={product}
-                        addToProduct={addToProduct}
-                    ></Product>)
-                }
-            </div>
-            <div className="cart-container">
-                <Cart cart={cart}>
-                    <Link to="/about">
-                        <button className='clear-btn'>Clear Chart</button>
-                        <br />
-                    </Link>
-                    <Link to="/service">
-                        <button className='review-btn'>Review Item</button>
-                    </Link>
-                </Cart>
-            </div>
+                <div className="product-container">
+                    {
+                        products.map(product => <Product
+                            key={product._id}
+                            product={product}
+                            addToProduct={addToProduct}
+                        ></Product>)
+                    }
+                </div>
+                <div className="cart-container">
+                    <Cart cart={cart}>
+                        <Link to="/about">
+                            <button className='clear-btn'>Clear Chart</button>
+                            <br />
+                        </Link>
+                        <Link to="/service">
+                            <button className='review-btn'>Review Item</button>
+                        </Link>
+                    </Cart>
+                </div>
 
-        </div>
-        <div className='pagination'>
-            {
-                [...Array(pageCount).keys()].map(number => <button className='pagination-btn'>{number+1}</button>)
-            }
-        </div>
+            </div>
+            <div className='pagination'>
+                {
+                    [...Array(pageCount).keys()].map(number => <button
+                        onClick={() => setPage(number)}
+                        className={page === number ? 'selected' : ''}
+                    >{number + 1}</button>)
+                }
+                <select style={{marginLeft: '15px', padding:'6px 9px'}} onChange={e => setSize(e.target.value)}>
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
         </div>
     );
 };
