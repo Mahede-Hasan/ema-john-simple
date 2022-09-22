@@ -41,7 +41,8 @@ const Shop = () => {
     }
 
     return (
-        <div className='shop-container'>
+        <div>
+            <div className='shop-container'>
             <div className="product-container">
                 {
                     products.map(product => <Product
@@ -63,6 +64,12 @@ const Shop = () => {
                 </Cart>
             </div>
 
+        </div>
+        <div className='pagination'>
+            {
+                [...Array(pageCount).keys()].map(number => <button className='pagination-btn'>{number+1}</button>)
+            }
+        </div>
         </div>
     );
 };

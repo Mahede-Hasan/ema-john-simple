@@ -40,6 +40,19 @@
     cursor: pointer;
 }
 
+.pagination {
+    margin: 100px auto;
+    display: block;
+    margin-left: 35%;
+}
+
+.pagination-btn {
+    margin-left: 15px;
+    padding: 5px 12px;
+    border: none;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1300px) {
     .product-container {
         display: grid;
