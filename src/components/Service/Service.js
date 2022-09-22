@@ -11,12 +11,12 @@ const Service = () => {
     const [cart, setCart] = useCart(products)
     const navigate = useNavigate()
     const handleRemoveClick = product => {
-        const rest = cart.filter(pd => pd.id !== product.id);
+        const rest = cart.filter(pd => pd._id !== product._id);
         setCart(rest)
-        removeFromDb(product.id);
+        removeFromDb(product._id);
     }
 
-    const HandleShipment = ()=>{
+    const HandleShipment = () => {
         navigate('/shipment')
     }
     return (
@@ -25,7 +25,7 @@ const Service = () => {
                 <div className="order-container">
                     {
                         cart.map(product => <ReviewItem
-                            key={product.id}
+                            key={product._id}
                             product={product}
                             handleRemoveClick={handleRemoveClick}
                         ></ReviewItem>)

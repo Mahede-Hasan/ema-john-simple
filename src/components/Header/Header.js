@@ -25,7 +25,7 @@ const Header = () => {
         } className="nav" to="/shop">Shop</NavLink>
         <NavLink style={({ isActive }) =>
           isActive ? activeStyle : undefined
-        } className="nav" to="/service">Service</NavLink>
+        } className="nav" to="/service">Order</NavLink>
         <NavLink style={({ isActive }) =>
           isActive ? activeStyle : undefined
         } className="nav" to="/inventory">Inventory</NavLink>
